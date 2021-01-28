@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">MonsterMatch</string>
+    <string name="app_name">Monster Match</string>
+    <string name="match_button">Match! These! Monsters!</string>
 </resources>
