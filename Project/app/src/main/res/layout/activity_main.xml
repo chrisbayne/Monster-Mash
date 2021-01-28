@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+<!--android:adjustViewBounds="true" keeps the aspect ratio of the image-->
     <ImageView
         android:id="@+id/monster_head_image_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/monster1_head"
+        android:adjustViewBounds="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,12 +26,23 @@
         app:layout_constraintTop_toBottomOf="@id/monster_head_image_view"
         app:layout_constraintEnd_toEndOf="parent"
         />
+    <ImageView
+        android:id="@+id/monster_feet_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/monster1_feet"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/monster_body_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
     <!--the android:text strings can be found in strings.xml
         Start_toStartOf sets the button from the start (left side) to the left side of the button
         End_toEndOf sets the button from the end (right side) to the right side of the button
         These two lines center the button
         Adding Bottom_toBottomOf sets the button to the bottom of the parent (screen)-->
     <Button
+        android:id="@+id/shuffle_button"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/match_button"
