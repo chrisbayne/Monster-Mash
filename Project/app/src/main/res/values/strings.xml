@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Monster Match</string>
     <string name="match_button">Match! These! Monsters!</string>
+    <string name="success_message">You Matched {fill in name here}!</string>
 </resources>

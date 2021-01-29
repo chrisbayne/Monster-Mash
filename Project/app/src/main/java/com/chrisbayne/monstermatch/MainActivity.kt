@@ -7,22 +7,10 @@ import com.chrisbayne.monstermatch.databinding.ActivityMainBinding // this was a
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding // this line automatically created/imported the com.chrisbayne.monstermatch.... line above // declared a class level variable
 
-    private val heads: List<Int> = listOf (
-        R.drawable.monster1_head,
-        R.drawable.monster2_head,
-        R.drawable.monster3_head
-    )
-
-    private val bodies: List<Int> = listOf (
-        R.drawable.monster1_body,
-        R.drawable.monster2_body,
-        R.drawable.monster3_body
-    )
-
-    private val feet: List<Int> = listOf (
-        R.drawable.monster1_feet,
-        R.drawable.monster2_feet,
-        R.drawable.monster3_feet
+    private val monsters: List<Monster> = listOf (
+        Monster(R.drawable.monster1_head, R.drawable.monster1_body, R.drawable.monster1_feet),
+        Monster(R.drawable.monster2_head, R.drawable.monster2_body, R.drawable.monster2_feet),
+        Monster(R.drawable.monster3_head, R.drawable.monster3_body, R.drawable.monster3_feet)
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,11 +26,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun shuffleMonsters() {
-        val randomHead = heads.random()
-        val randomBody = bodies.random()
-        val randomFeet = feet.random()
-        binding.monsterHeadImageView.setImageResource(randomHead)
-        binding.monsterBodyImageView.setImageResource(randomBody)
-        binding.monsterFeetImageView.setImageResource(randomFeet)
+        binding.monsterHeadImageView.setImageResource(monsters.random().head)
+        binding.monsterBodyImageView.setImageResource(monsters.random().body)
+        binding.monsterFeetImageView.setImageResource(monsters.random().feet)
     }
+
+    
 }
+
+data class Monster (val head: Int, val body: Int, val feet: Int)
